@@ -7,6 +7,7 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
+    "baseUrl": ".",
     // esModuleInterop позволяет работать с пакетами, которые используют
     // commonJs, как с обычными пакетами с помощью import
     "esModuleInterop": true,
