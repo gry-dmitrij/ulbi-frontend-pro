@@ -1,7 +1,10 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 const AboutPage = () => {
+  const {t} = useTranslation('about')
+
   return <div>
-    About page
+    {t('PAGE.ABOUT_TITLE')}
   </div>
 }
 
