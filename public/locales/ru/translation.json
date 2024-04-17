@@ -4,5 +4,6 @@
   "PAGE.MAIN_TITLE": "Главная страница",
   "language": "Язык",
   "loading": "Загрузка",
-  "toggle": "Переключить"
+  "toggle": "Переключить",
+  "page_not_found": "Страница не найдена"
 }

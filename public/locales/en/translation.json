@@ -4,5 +4,6 @@
   "PAGE.MAIN_TITLE": "Main page",
   "language": "Language",
   "loading": "Loading",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "page_not_found": "Page not found"
 }
