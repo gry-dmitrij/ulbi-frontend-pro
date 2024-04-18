@@ -5,5 +5,7 @@
   "language": "Язык",
   "loading": "Загрузка",
   "toggle": "Переключить",
-  "page_not_found": "Страница не найдена"
+  "page_not_found": "Страница не найдена",
+  "unexpected_error_occurred": "Произошла непредвиденная ошибка",
+  "reload_page": "Обновить страницу"
 }
