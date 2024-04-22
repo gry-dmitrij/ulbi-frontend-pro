@@ -23,7 +23,7 @@ export function buildPlugins(
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
     ...(isAnalyzer ? [new BundleAnalyzerPlugin()] : []),
   ];
 }
