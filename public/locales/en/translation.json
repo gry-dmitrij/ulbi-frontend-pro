@@ -8,5 +8,6 @@
   "toggle": "Toggle",
   "page_not_found": "Page not found",
   "unexpected_error_occurred": "An unexpected error occurred",
-  "reload_page": "Reload page"
+  "reload_page": "Reload page",
+  "sign": "Sign"
 }

@@ -60,6 +60,20 @@ export const ButtonClearDark: Story = {
   decorators: [ThemeWithInvertedBox(Theme.DARK)],
 };
 
+export const ButtonClearInvertedLight: Story = {
+  args: {
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+  decorators: [ThemeWithInvertedBox(Theme.LIGHT)],
+};
+
+export const ButtonClearInvertedDark: Story = {
+  args: {
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+  decorators: [ThemeWithInvertedBox(Theme.DARK)],
+};
+
 export const ButtonBackgroundLight: Story = {
   args: {
     theme: ButtonTheme.BACKGROUND,
