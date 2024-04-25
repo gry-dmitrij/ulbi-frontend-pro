@@ -1,13 +1,15 @@
 {
-  "test_example": "Тестовый пример",
-  "translation": "Перевод",
-  "PAGE.MAIN_TITLE": "Главная страница",
+  "decrement": "уменьшить",
+  "increment": "увеличить",
   "language": "Русский",
   "language_short": "Ru",
   "loading": "Загрузка",
-  "toggle": "Переключить",
+  "PAGE.MAIN_TITLE": "Главная страница",
   "page_not_found": "Страница не найдена",
-  "unexpected_error_occurred": "Произошла непредвиденная ошибка",
   "reload_page": "Обновить страницу",
+  "test_example": "Тестовый пример",
+  "toggle": "Переключить",
+  "translation": "Перевод",
+  "unexpected_error_occurred": "Произошла непредвиденная ошибка",
   "sign": "Войти"
 }

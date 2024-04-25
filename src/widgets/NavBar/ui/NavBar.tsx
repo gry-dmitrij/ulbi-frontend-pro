@@ -30,8 +30,7 @@ export const NavBar = ({ className }: NavBarProps) => {
         isOpen={isAuthModal}
         onCLose={onToggleModal}
       >
-        {/* eslint-disable-next-line */}
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, corporis culpa cumque dolore dolores, eaque facilis itaque modi molestias natus porro quae quibusdam quisquam rem similique sit ut voluptatem.
+        {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur, corporis culpa cumque dolore dolores, eaque facilis itaque modi molestias natus porro quae quibusdam quisquam rem similique sit ut voluptatem.')}
       </Modal>
     </div>
   );

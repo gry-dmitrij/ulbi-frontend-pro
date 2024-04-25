@@ -1,13 +1,15 @@
 {
-  "test_example": "Test example",
-  "translation": "Translation",
-  "PAGE.MAIN_TITLE": "Main page",
+  "decrement": "decrement",
+  "increment": "increment",
   "language": "English",
   "language_short": "En",
   "loading": "Loading",
-  "toggle": "Toggle",
+  "PAGE.MAIN_TITLE": "Main page",
   "page_not_found": "Page not found",
-  "unexpected_error_occurred": "An unexpected error occurred",
   "reload_page": "Reload page",
-  "sign": "Sign"
+  "test_example": "Test example",
+  "toggle": "Toggle",
+  "translation": "Translation",
+  "sign": "Sign",
+  "unexpected_error_occurred": "An unexpected error occurred",
 }
