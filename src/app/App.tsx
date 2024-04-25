@@ -6,10 +6,10 @@ import { SideBar } from 'widgets/SideBar';
 import { Suspense } from 'react';
 
 function App() {
-  const { theme } = useTheme();
+  useTheme();
 
   return (
-    <div className={classNames('app', {}, ['mainBox', theme])}>
+    <div className={classNames('app', {}, ['mainBox'])}>
       <Suspense fallback="">
         <NavBar />
         <div className="content-page">
