@@ -5,11 +5,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
 import styles from './Modal.module.scss';
 
-interface ModalProps {
+export interface BaseModalProps {
   className?: string
-  children?: ReactNode
   isOpen?: boolean
   onCLose?: () => void
+}
+
+interface ModalProps extends BaseModalProps{
+  children?: ReactNode
 }
 
 const ANIMATION_DELAY = 300;
@@ -23,12 +26,24 @@ const Modal = (
   }: ModalProps,
 ) => {
   const [isClosing, setIsClosing] = useState(false);
+  const [isOpeningDelay, setIsOpeningDelay] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const mods: Record<string, boolean> = {
-    [styles.opened]: isOpen,
+    [styles.opened]: isOpeningDelay,
     [styles.closing]: isClosing,
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      // для работы анимации
+      setTimeout(() => {
+        setIsOpeningDelay(isOpen);
+      }, 0);
+    } else {
+      setIsOpeningDelay(false);
+    }
+  }, [isOpen]);
 
   const onContentCLick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -57,6 +72,10 @@ const Modal = (
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  if (!isOpen && !isClosing) {
+    return null;
+  }
 
   return (
     <Portal>

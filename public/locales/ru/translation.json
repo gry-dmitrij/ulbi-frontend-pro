@@ -1,5 +1,7 @@
 {
   "decrement": "уменьшить",
+  "enter_username": "Введите имя пользователя",
+  "enter_password": "Введите пароль",
   "increment": "увеличить",
   "language": "Русский",
   "language_short": "Ru",

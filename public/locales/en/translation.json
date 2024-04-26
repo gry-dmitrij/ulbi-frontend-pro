@@ -1,5 +1,7 @@
 {
   "decrement": "decrement",
+  "enter_username": "Enter username",
+  "enter_password": "Enter password",
   "increment": "increment",
   "language": "English",
   "language_short": "En",
