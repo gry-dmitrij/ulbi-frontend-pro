@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUserName';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
 import styles from './NavBar.module.scss';
 
 interface NavBarProps {
@@ -10,8 +12,10 @@ interface NavBarProps {
 }
 
 export const NavBar = ({ className }: NavBarProps) => {
-  const { t } = useTranslation();
+  const dispatch = useDispatch();
   const [isAuthModal, setIsAuthModal] = useState(false);
+  const authData = useSelector(getUserAuthData);
+  const { t } = useTranslation();
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -20,6 +24,24 @@ export const NavBar = ({ className }: NavBarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
+
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout());
+  }, [dispatch]);
+
+  if (authData) {
+    return (
+      <div className={classNames(styles.navbar, {}, [className])}>
+        <Button
+          theme={ButtonTheme.CLEAR}
+          className={styles.links}
+          onClick={onLogout}
+        >
+          {t('logout')}
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(styles.navbar, {}, [className])}>
