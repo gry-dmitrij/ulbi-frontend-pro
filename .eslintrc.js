@@ -50,6 +50,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
     'no-param-reassign': 'off',
     'max-len': ['error', { code: 120 }],
+    'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
   },
   globals: {
     __IS_DEV__: true,
