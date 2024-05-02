@@ -34,7 +34,7 @@ export const NavBarAuth: Story = {
   decorators: [
     ThemeDecorator(Theme.LIGHT),
     StoreDecorator({
-      user: { authData: { id: '1', username: 'user' } },
+      user: { authData: { id: 1, username: 'user' } },
     }),
   ],
 };
