@@ -15,5 +15,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Sam",
+    "lastname": "Fat",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russuia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": ""
+  }
 }

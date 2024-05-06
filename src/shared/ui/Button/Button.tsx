@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, FC, memo } from 'react';
 import styles from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -56,4 +56,4 @@ const Button: FC<ButtonProps> = (
   );
 };
 
-export default Button;
+export default memo(Button);

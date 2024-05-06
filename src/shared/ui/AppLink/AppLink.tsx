@@ -1,5 +1,5 @@
 import { Link, LinkProps } from 'react-router-dom';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './AppLink.module.scss';
 
@@ -31,4 +31,4 @@ const AppLink: FC<AppLinkProps> = (
   </Link>
 );
 
-export default AppLink;
+export default memo(AppLink);

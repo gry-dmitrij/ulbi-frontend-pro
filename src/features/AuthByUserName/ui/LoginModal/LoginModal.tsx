@@ -20,7 +20,7 @@ const LoginModal = (
     onCLose={onCLose}
   >
     <Suspense fallback={<Loader />}>
-      <LoginForm />
+      <LoginForm onSuccess={onCLose} />
     </Suspense>
   </Modal>
 );
