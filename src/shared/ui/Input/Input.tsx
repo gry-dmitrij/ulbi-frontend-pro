@@ -34,7 +34,7 @@ const Input = memo((
   const [localValue, setLocalValue] = useState(value || '');
   const firstRender = useRef(true);
 
-  const positionRef = useRef<HTMLDivElement>();
+  const positionRef = useRef<HTMLDivElement>(null);
 
   const updateValue = useCallback((val: string) => {
     onChange?.(val);
@@ -73,7 +73,7 @@ const Input = memo((
 
   const selectHandler = (e: SyntheticEvent<HTMLInputElement>) => {
     const element: HTMLInputElement = e.currentTarget;
-    const pos = element.selectionStart;
+    const pos = element.selectionStart || 0;
     setCaretPosition((pos / textLength) * textWidth);
     onSelect?.(e);
   };

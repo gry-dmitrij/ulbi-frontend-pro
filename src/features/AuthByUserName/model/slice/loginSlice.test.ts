@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { LoginSchema } from 'features/AuthByUserName';
 import { expect } from '@storybook/test';
 import loginReducer, { loginActions } from './loginSlice';

@@ -14,6 +14,7 @@ export default (env: BuildEnv) => {
   const mode = env.mode || 'development';
   const PORT = env.port || 3000;
   const isAnalyzer = env.analyzer || false;
+  const apiUrl = env.apiUrl || '/';
 
   const isDev = mode === 'development';
 
@@ -23,6 +24,7 @@ export default (env: BuildEnv) => {
     isDev,
     port: PORT,
     isAnalyzer,
+    apiUrl,
   });
 
   return config;

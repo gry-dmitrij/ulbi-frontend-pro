@@ -51,9 +51,12 @@ module.exports = {
     'no-param-reassign': 'off',
     'max-len': ['error', { code: 120 }],
     'react/jsx-no-useless-fragment': ['error', { allowExpressions: true }],
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
+    NodeJS: true,
   },
   overrides: [
     {

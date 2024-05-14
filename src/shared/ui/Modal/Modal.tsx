@@ -1,7 +1,7 @@
 import React, {
   ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
 import styles from './Modal.module.scss';
 
@@ -10,6 +10,8 @@ export interface BaseModalProps {
   isOpen?: boolean
   onCLose?: () => void
 }
+
+const { setTimeout, clearTimeout } = window;
 
 interface ModalProps extends BaseModalProps{
   children?: ReactNode
@@ -27,9 +29,9 @@ const Modal = (
 ) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isOpeningDelay, setIsOpeningDelay] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<number>();
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpeningDelay,
     [styles.closing]: isClosing,
   };
