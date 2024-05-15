@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
   ChangeEvent,
   InputHTMLAttributes,
@@ -11,7 +11,7 @@ import {
 import styles from './Input.module.scss';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
-  value?: string
+  value?: string | number
   onChange?: (value: string) => void
 }
 
@@ -24,6 +24,7 @@ const Input = memo((
     onBlur,
     onFocus,
     onSelect,
+    readOnly,
     ...props
   }: InputProps,
 ) => {
@@ -37,7 +38,6 @@ const Input = memo((
   const positionRef = useRef<HTMLDivElement>(null);
 
   const updateValue = useCallback((val: string) => {
-    onChange?.(val);
     setLocalValue(val);
     setTextLength(val.length || 0);
     let textWidth = 0;
@@ -47,18 +47,20 @@ const Input = memo((
     }
     setTextWidth(textWidth);
     setCaretPosition(textWidth || val.length);
-  }, [onChange]);
+  }, []);
 
   useEffect(() => {
     if (!firstRender.current) {
       return;
     }
     firstRender.current = false;
-    updateValue(value || '');
+    updateValue(value != null ? `${value}` : '');
   }, [value, updateValue]);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    updateValue(e.target.value || '');
+    const val = e.target.value || '';
+    updateValue(val);
+    onChange?.(val);
   };
 
   const blurHandler = (e: FocusEvent<HTMLInputElement>) => {
@@ -78,8 +80,14 @@ const Input = memo((
     onSelect?.(e);
   };
 
+  const mods: Mods = {
+    [styles.readonly]: readOnly,
+  };
+
+  const isCaretVisible = isFocused && !readOnly;
+
   return (
-    <div className={classNames(styles.inputWrapper, {}, [className])}>
+    <div className={classNames(styles.inputWrapper, mods, [className])}>
       {placeholder && (
         <div className={styles.placeholder}>
           {placeholder}
@@ -91,6 +99,7 @@ const Input = memo((
           {...props}
           className={styles.input}
           value={value != null ? value : localValue}
+          readOnly={readOnly}
           onChange={onChangeHandler}
           onBlur={blurHandler}
           onFocus={focusHandler}
@@ -100,7 +109,7 @@ const Input = memo((
           ref={positionRef}
           className={styles.caretPosition}
         />
-        {isFocused && (
+        {isCaretVisible && (
           <span
             className={styles.caret}
             style={{

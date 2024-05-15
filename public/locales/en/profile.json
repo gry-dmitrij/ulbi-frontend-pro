@@ -1,6 +1,9 @@
 {
+  "city": "City",
+  "enter_avatar_link": "Enter avatar link",
   "profile": "Profile",
-  "edit": "Edit",
   "your_name": "Your name",
-  "your_surname": "Your surname"
+  "your_surname": "Your surname",
+  "your_age": "Your age",
+
 }
