@@ -56,7 +56,8 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    NodeJS: true,
+    // NodeJS: true,
+    __PROJECT__: true,
   },
   overrides: [
     {

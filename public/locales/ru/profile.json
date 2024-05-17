@@ -4,5 +4,11 @@
   "profile": "Профиль",
   "your_name": "Ваше имя",
   "your_surname": "Ваша фамилия",
-  "your_age": "Ваш возраст"
+  "your_age": "Ваш возраст",
+
+  "ValidateProfileError.SERVER_ERROR": "Серверная ошибка",
+  "ValidateProfileError.INCORRECT_COUNTRY": "Некорректный регион",
+  "ValidateProfileError.INCORRECT_USER_DATA":  "Некорректные данные пользователя",
+  "ValidateProfileError.INCORRECT_AGE": "Некорректный возраст",
+  "ValidateProfileError.NO_DATA":  "Данные не указаны"
 }

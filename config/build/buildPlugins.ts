@@ -10,6 +10,7 @@ export function buildPlugins(
     isDev,
     isAnalyzer,
     apiUrl,
+    project,
   }: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
   return [
@@ -24,6 +25,7 @@ export function buildPlugins(
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
     ...(isDev ? [new webpack.HotModuleReplacementPlugin()] : []),
     ...(isAnalyzer ? [new BundleAnalyzerPlugin()] : []),
