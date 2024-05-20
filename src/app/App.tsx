@@ -4,11 +4,12 @@ import { AppRouter } from 'app/providers/router';
 import { NavBar } from 'widgets/NavBar';
 import { SideBar } from 'widgets/SideBar';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInit, userActions } from 'entities/User';
 
 function App() {
   const dispatch = useDispatch();
+  const init = useSelector(getUserInit);
   useTheme();
 
   useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
         <NavBar />
         <div className="content-page">
           <SideBar />
-          <AppRouter />
+          {init && <AppRouter />}
         </div>
       </Suspense>
     </div>
