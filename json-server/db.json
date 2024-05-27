@@ -186,13 +186,15 @@
       "id": 1,
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://wp.demokraatti.fi/wp-content/uploads/2018/04/vainoaminen.jpg"
     },
     {
       "id": 2,
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://wp.demokraatti.fi/wp-content/uploads/2018/04/vainoaminen.jpg"
     }
   ],
   "profile": {
